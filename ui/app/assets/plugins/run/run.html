@@ -50,7 +50,7 @@
               </span>
             </dt>
             <dd data-bind="foreach: sbt.app.mainClasses">
-              <a data-bind="text: $data, click: function(){ sbt.app.currentMainClass($data) }"></a>
+              <a data-bind="text: $data, click: function(){ $root.sbt.app.currentMainClass($data) }"></a>
             </dd>
           </dl>
         </li>
