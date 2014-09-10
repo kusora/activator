@@ -106,6 +106,8 @@ define([
   function requestExecution(command) {
     if (command == "run") {
       command = runCommand(); // typing 'run' execute runMain
+      // TODO : Inspect flag needed
+      command = "echo:" + command;
     }
 
     return sbtRequest('RequestExecution', command);
