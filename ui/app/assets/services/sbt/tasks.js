@@ -411,7 +411,7 @@ define([
   var valueChanged = subTypeEventStream("ValueChanged").map(function(message) {
     return {
       key: message.event.key.key.name,
-      value: message.event.value.value
+      value: message.event.value.serialized
     }
   });
 
