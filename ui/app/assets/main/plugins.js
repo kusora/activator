@@ -29,8 +29,8 @@ define(function() {
             }
             plugin.route(p, breadcrumb);
           }
-        }, function() {
-          console.log("404 TODO") // TODO
+        }, function(e) {
+          console.log("404 TODO: ", e); // TODO
         });
       }
     }
