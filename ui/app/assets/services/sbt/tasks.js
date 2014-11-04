@@ -6,13 +6,15 @@ define([
   'commons/websocket',
   'commons/stream',
   'commons/types',
-  './app'
+  './app',
+  'services/monitoring/monitoringSolutions'
 ], function(
   router,
   websocket,
   Stream,
   types,
-  app
+  app,
+  monitoringSolutions
 ) {
 
   /**
@@ -124,11 +126,12 @@ define([
   Run command
   */
   var runCommand = ko.computed(function() {
+    // TODO : HERE SHOULD PROBABLY GO NEW RELIC AND APP DYNAMICS RUN COMMAND TWEAKS
     if (app.currentMainClass()){
-      return (app.inspectActivated()?"echo:":"")+"backgroundRunMain "+ app.currentMainClass();
+      return (monitoringSolutions.inspectActivated()?"echo:":"")+"backgroundRunMain "+ app.currentMainClass();
     }
     else {
-      return (app.inspectActivated()?"echo:":"")+"backgroundRun";
+      return (monitoringSolutions.inspectActivated()?"echo:":"")+"backgroundRun";
     }
   });
 
