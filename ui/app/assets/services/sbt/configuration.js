@@ -11,7 +11,7 @@ define([
     // plugin information
     var backgroundRunPluginFileLocation = "/project/sbt-ui.sbt";
     var backgroundRunPluginFileContent = "// This plugin represents functionality that is to be added to sbt in the future\n\n" +
-      "addSbtPlugin(\"com.typesafe.sbtrc\" % \"ui-interface-0-13\" % \"1.0-d5ba9ed9c1d31e3431aeca5e429d290b56cb0b14\")";
+      "addSbtPlugin(\"com.typesafe.sbtrc\" % \"ui-interface-0-13\" % \"1.0-a29d6039148143de0b845da4b1e97e123f793129\")";
     var uiFileEchoSettings = "\n\nfork in run := true";
 
     // this file isn't required to exist, if it doesn't we should create
