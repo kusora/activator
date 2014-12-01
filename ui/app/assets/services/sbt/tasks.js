@@ -113,7 +113,7 @@ define([
    * Reset inspect data
    */
   function resetInspect() {
-    debug && console.log("Reset Inspect datas")
+    debug && console.log("Resetting Inspect data")
     websocket.send({
       "commands": [{
         "module": "lifecycle",
@@ -126,12 +126,10 @@ define([
   Run command
   */
   var runCommand = ko.computed(function() {
-    // TODO : HERE SHOULD PROBABLY GO NEW RELIC AND APP DYNAMICS RUN COMMAND TWEAKS
     if (app.currentMainClass()){
-      return (monitoringSolutions.inspectActivated()?"echo:":"")+"backgroundRunMain "+ app.currentMainClass();
-    }
-    else {
-      return (monitoringSolutions.inspectActivated()?"echo:":"")+"backgroundRun";
+      return (monitoringSolutions.runMainCommand() + " " + app.currentMainClass());
+    } else {
+      return (monitoringSolutions.runCommand());
     }
   });
 
